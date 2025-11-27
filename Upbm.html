@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="hi-IN" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Image Resizer - Image Ko 200KB Me Kaise Karen Online - img1resize.in</title>
+    <meta name="description" content="Free Online Image Resizer - Image Ko 200KB, 100KB, 500KB Me Karen. WhatsApp, Facebook, Instagram Ke Liye Photo Size Reduce Karen.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-header">
+                    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <a class="nav-brand" href="/">
+                        <i class="fas fa-image"></i> IMG1RESIZE.IN
+                    </a>
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <ul class="nav-list">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#pixel-resize">Pixel Resize</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Free Online Image Resizer & Compressor</h1>
+            <p>Resize, compress and optimize your images without quality loss. Perfect for web, email, and social media. Support for JPEG, PNG, WebP formats.</p>
+            
+          
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Tool Section -->
+        <section class="tool-section" aria-labelledby="tool-heading">
+            <h2 id="tool-heading" class="text-center">Resize Your Images in Seconds</h2>
+            <p class="text-center">Upload any image (JPEG, PNG, WebP) and resize it to your desired dimensions or file size. No registration required.</p>
+            
+            <div class="compression-type-buttons">
+                Compress Type:
+                <button class="compression-btn active" data-type="pixel" aria-pressed="true">File Size (KB/MB)</button>
+                <button class="compression-btn" data-type="dimension" aria-pressed="false">Pixel Resize</button>
+            </div>
+
+            <!-- File Size Compression -->
+            <div class="compression-type active" id="pixel-compression">
+                <div class="upload-area" id="drop-area" role="button" tabindex="0" aria-label="Image upload area">
+                    <p class="upload-text">Select image & drag/drop here</p>
+                    <img id="image-in-box" class="image-preview" alt="Preview of selected image">
+                    
+                    <!-- Image Info Box -->
+                    <div class="image-info-box" id="image-info-box">
+                        <div class="info-item">
+                            <i class="fas fa-ruler-combined" aria-hidden="true"></i>
+                            <span id="image-dimensions">-</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-weight-hanging" aria-hidden="true"></i>
+                            <span id="image-size">-</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-format" aria-hidden="true"></i>
+                            <span id="image-format">-</span>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="btn btn-primary" id="select-image" aria-label="Select image file">
+                        <i class="fas fa-folder-open"></i> Select Image
+                    </button>
+                    <button type="button" class="btn btn-warning reset-btn" id="reset-image" aria-label="Reset image selection">
+                        <i class="fas fa-redo"></i> Reset
+                    </button>
+                    <input type="file" id="file-input" accept="image/*" style="display: none;" aria-hidden="true">
+                </div>
+
+                <div class="size-controls-section">
+                    <label for="size-input" class="size-label">Target File Size:</label>
+                    <div class="size-inputs">
+                        <input type="number" class="size-input" id="size-input" placeholder="Enter size" min="1" value="100" aria-label="Target file size">
+                        <select class="unit-select" id="unit-select" aria-label="Size unit">
+                            <option value="kb">KB</option>
+                            <option value="mb">MB</option>
+                        </select>
+                    </div>
+                    
+<!-- Format Selection -->
+<div class="format-control">
+    <label for="format-select" class="format-label">Output Format:</label>
+    <select class="format-select" id="format-select">
+        <option value="image/jpeg" data-extension="jpeg">JPEG</option>
+        <option value="image/jpg" data-extension="jpg">JPG</option>
+        <option value="image/png" data-extension="png">PNG</option>
+        <option value="image/webp" data-extension="webp">WebP</option>
+    </select>
+</div>
+                    
+                    <div class="preset-buttons">
+                        <button class="preset-btn" data-size="20" aria-label="Set size to 20 KB">20 KB</button>
+                        <button class="preset-btn" data-size="50" aria-label="Set size to 50 KB">50 KB</button>
+                        <button class="preset-btn" data-size="100" aria-label="Set size to 100 KB">100 KB</button>
+                        <button class="preset-btn" data-size="200" aria-label="Set size to 200 KB">200 KB</button>
+                        <button class="preset-btn" data-size="500" aria-label="Set size to 500 KB">500 KB</button>
+                    </div>
+                </div>
+
+                <div class="quality-control">
+                    <label for="quality-slider">Image Quality: <span id="quality-value">85%</span></label>
+                    <input type="range" class="quality-slider" id="quality-slider" min="40" max="100" value="85" aria-label="Image quality slider">
+                </div>
+
+                <!-- RESIZE BUTTON -->
+                <div class="action-button-container">
+                    <button class="btn btn-primary btn-large" id="resize-button" aria-label="Resize image">
+                        <i class="fas fa-magic"></i> Compress Image
+                    </button>
+                </div>
+            </div>
+
+<!-- Pixel Dimension Resize -->
+<div class="compression-type" id="dimension-compression">
+    <div class="upload-area" id="drop-area-pixel" role="button" tabindex="0" aria-label="Image upload area for pixel resize">
+        <p class="upload-text">Select image for pixel resize</p>
+        <img id="image-in-box-pixel" class="image-preview" alt="Preview of selected image">
+        
+        <!-- Image Info Box for Pixel -->
+        <div class="image-info-box" id="image-info-box-pixel">
+            <div class="info-item">
+                <i class="fas fa-ruler-combined" aria-hidden="true"></i>
+                <span id="image-dimensions-pixel">-</span>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-weight-hanging" aria-hidden="true"></i>
+                <span id="image-size-pixel">-</span>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary" id="select-image-pixel" aria-label="Select image file">
+            <i class="fas fa-folder-open"></i> Select Image
+        </button>
+        <button type="button" class="btn btn-warning reset-btn" id="reset-image-pixel" aria-label="Reset image selection">
+            <i class="fas fa-redo"></i> Reset
+        </button>
+        <input type="file" id="file-input-pixel" accept="image/*" style="display: none;" aria-hidden="true">
+    </div>
+
+    <div class="dimension-controls">
+        <div class="dimension-row">
+            <div class="dimension-group">
+                <label for="width-input">Width (px):</label>
+                <input type="number" class="dimension-input" id="width-input" placeholder="Width" min="1" aria-label="Image width in pixels">
+            </div>
+            <div class="dimension-group">
+                <label for="height-input">Height (px):</label>
+                <input type="number" class="dimension-input" id="height-input" placeholder="Height" min="1" aria-label="Image height in pixels">
+            </div>
+        </div>
+        
+        <div class="aspect-ratio-control">
+            <label class="checkbox-label">
+                <input type="checkbox" id="maintain-aspect" checked aria-checked="true"> Maintain Aspect Ratio
+            </label>
+        </div>
+
+<!-- Format Selection for Pixel Resize -->
+<div class="format-control">
+    <label for="format-select-pixel" class="format-label">Output Format:</label>
+    <select class="format-select" id="format-select-pixel">
+        <option value="image/jpeg" data-extension="jpeg">JPEG</option>
+        <option value="image/jpg" data-extension="jpg">JPG</option>
+        <option value="image/png" data-extension="png">PNG</option>
+        <option value="image/webp" data-extension="webp">WebP</option>
+    </select>
+</div>
+
+        <div class="preset-buttons">
+            <button class="dimension-preset" data-width="800" data-height="600" aria-label="Set dimensions to 800x600">800×600</button>
+            <button class="dimension-preset" data-width="1024" data-height="768" aria-label="Set dimensions to 1024x768">1024×768</button>
+            <button class="dimension-preset" data-width="1920" data-height="1080" aria-label="Set dimensions to 1920x1080">1920×1080</button>
+            <button class="dimension-preset" data-width="1080" data-height="1080" aria-label="Set dimensions to 1080x1080">1080×1080</button>
+        </div>
+    </div>
+
+    <div class="quality-control">
+        <label for="quality-slider-pixel">Image Quality: <span id="quality-value-pixel">85%</span></label>
+        <input type="range" class="quality-slider" id="quality-slider-pixel" min="40" max="100" value="85" aria-label="Image quality slider">
+    </div>
+
+    <!-- RESIZE BUTTON -->
+    <div class="action-button-container">
+        <button class="btn btn-primary btn-large" id="resize-button-pixel" aria-label="Resize image by pixels">
+            <i class="fas fa-crop-alt"></i> Resize by Pixels
+        </button>
+    </div>
+</div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container" id="progress-container">
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                        <span class="sr-only">Processing Image</span>
+                    </div>
+                </div>
+                <p class="text-center">Processing your image... Please wait</p>
+            </div>
+
+            <!-- Error Alert -->
+            <div class="alert alert-danger" id="error-alert">
+                <strong><i class="fas fa-exclamation-triangle"></i> Error!</strong> <span id="error-message"></span>
+            </div>
+
+            <!-- Preview Container -->
+            <div class="preview-container" id="preview-container">
+                <div class="preview-box">
+                    <h3><i class="fas fa-check-circle success-icon"></i> Resized Image Ready!</h3>
+                    <img id="resized-preview" class="result-preview" alt="Resized image preview">
+                    <div class="image-info" id="resized-info"></div>
+                    <button class="btn btn-success download-btn" id="download-button" aria-label="Download resized image">
+                        <i class="fas fa-download" aria-hidden="true"></i> Download Resized Image
+                    </button>
+
+                    <!-- Share Buttons After Download -->
+                    <div class="social-share-section">
+                        <div class="share-header">
+                            <h4>✅ Image Successfully Processed!</h4>
+                            <p>Share this free tool with friends and help them resize their images too:</p>
+                        </div>
+                        
+                        <div class="share-buttons-grid">
+                            <button class="share-btn whatsapp-share" data-platform="whatsapp" aria-label="Share on WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>WhatsApp</span>
+                            </button>
+                            
+                            <button class="share-btn facebook-share" data-platform="facebook" aria-label="Share on Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                                <span>Facebook</span>
+                            </button>
+                            
+                            <button class="share-btn twitter-share" data-platform="twitter" aria-label="Share on Twitter">
+                                <i class="fab fa-twitter"></i>
+                                <span>Twitter</span>
+                            </button>
+                            
+                            <button class="share-btn copy-link" data-platform="copy" aria-label="Copy website link">
+                                <i class="fas fa-link"></i>
+                                <span>Copy Link</span>
+                            </button>
+                        </div>
+                        
+                        <div class="share-stats">
+                            <small>🚀 <strong>18,000+</strong> users already shared this tool</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+  <!-- Live Counter -->
+            <div class="live-counter">
+                <p>🚀 <strong><span id="user-count">15,829</span>+ Users</strong> Ne Aaj Use Kiya!</p>
+                <p>⭐ <strong><span id="image-count">72,456</span>+ Images</strong> Resize Ho Chuki!</p>
+            
+        <!-- Trust Badges -->
+        <div class="trust-badges">
+            <div class="badge">✅ 100% Free</div>
+            <div class="badge">🔒 Secure & Private</div>
+            <div class="badge">⚡ Instant Results</div>
+            <div class="badge">📱 Mobile Friendly</div>
+            <div class="badge">🖼️ All Formats</div>
+        </div>
+</div>
+        <!-- Features Section -->
+        <section class="content-section" id="features" aria-labelledby="features-heading">
+            <h2 id="features-heading"><i class="fas fa-star"></i> Key Features</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt" aria-hidden="true"></i>
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Process images in seconds with our optimized algorithms. No waiting time even for large files.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-crown" aria-hidden="true"></i>
+                    </div>
+                    <h3>High Quality</h3>
+                    <p>Maintain visual quality while significantly reducing file size with smart compression.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock" aria-hidden="true"></i>
+                    </div>
+                    <h3>Secure & Private</h3>
+                    <p>All processing happens locally in your browser. Your images never leave your computer.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                    </div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Works perfectly on all devices - smartphones, tablets, and desktop computers.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="content-section" id="faq" aria-labelledby="faq-heading">
+            <h2 id="faq-heading"><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq1">
+                        What image formats does img1resize.in support?
+                    </button>
+                    <div class="faq-answer" id="faq1">
+                        We support JPEG, PNG, and WebP image formats. You can upload any of these formats and resize them without quality loss. The output can be in any of these formats as per your choice.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq2">
+                        Is img1resize.in completely free to use?
+                    </button>
+                    <div class="faq-answer" id="faq2">
+                        Yes, our image resizer tool is 100% free forever. There are no hidden charges, no registration required, and no limitations on usage.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq3">
+                        How do I reduce image size to 200KB?
+                    </button>
+                    <div class="faq-answer" id="faq3">
+                        Simply upload your image, select 200KB from the preset buttons or enter 200 in the size input, choose your preferred format, and click Compress Image.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq4">
+                        Is my data secure with this tool?
+                    </button>
+                    <div class="faq-answer" id="faq4">
+                        Absolutely! All image processing happens locally in your browser. Your images never leave your computer and are not uploaded to any server.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-image"></i> img1resize.in</h3>
+                <p>Free online image resizer and compressor tool. Resize your images without quality loss.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2024 img1resize.in. All rights reserved. | Free Image Resizer Tool</p>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
